@@ -1,6 +1,6 @@
 name: WarnPlayer
 version: 1.0.0
-api: [1.0.0]
+api: [2.0.0]
 author: MCrafters
 main: WarnPlayer\Main
 commands:
