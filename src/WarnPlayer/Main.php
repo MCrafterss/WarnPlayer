@@ -55,6 +55,14 @@
 
           $player = $this->getServer()->getPlayer($name);
 
+          if($player->isOp()){
+
+            $sender->sendMessage(TF::RED . $player->getName() . " has the OP status and thus, cannot be warned.");
+
+            return;
+
+          }
+
           if($player === null) {
 
             $sender->sendMessage(TF::RED . "Player " . $name . " could not be found.");
@@ -87,6 +95,12 @@
 
               if($action === "kick") {
 
+                if($player->isOP()){
+
+                  return;
+
+                }
+
                 $player->kick("You were kicked for being warned 3+ times.");
 
                 $sender->sendMessage(TF::GREEN . $player_name . " was kicked for being warned 3+ times.");
@@ -94,6 +108,12 @@
                 return true;
 
               } else if($action === "ban") {
+
+                if($player->isOP()){
+                  
+                  return;
+                  
+                }
 
                 $player->setBanned(true);
 
