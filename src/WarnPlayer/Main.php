@@ -11,9 +11,6 @@
   use pocketmine\command\ConsoleCommandSender;
 
   class Main extends PluginBase implements Listener {
-    public function dataPath() {
-      return $this->getDataFolder();
-    }
 
     public function onEnable() {
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
