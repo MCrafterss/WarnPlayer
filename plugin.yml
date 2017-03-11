@@ -7,7 +7,7 @@ commands:
   warn:
     description: Warn A Player!
     usage: "/warn <player> <reason>"
-    permission: player.warn
+    permission: rank.moderator
 permissions:
-  player.warn:
+  rank.moderator:
     default: op
